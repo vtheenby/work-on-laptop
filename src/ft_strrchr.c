@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_strrchr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:38:21 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/31 20:31:10 by lboertie      ########   odam.nl         */
+/*   Created: 2019/10/30 17:23:22 by lboertie       #+#    #+#                */
+/*   Updated: 2019/10/31 14:34:07 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t				i;
-	unsigned char		*str1;
-	const unsigned char	*str2;
+	int	i;
 
-	i = 0;
-	str1 = dst;
-	str2 = src;
-	if (src == NULL && dst == NULL)
-		return (NULL);
-	while (i < len)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		while (&dst >= &src && &dst <= &src[len - 1])
+		if (s[i] == c)
 		{
-			str1[len] = str2[len];
-			len--;
+			return ((char *)s + i);
 		}
-		else
-		{
-			str1[i] = str2[i];
-			i++;
-		}
-		
+		i--;
 	}
-	dst = str1;
-	return (dst);
+	if (c == 0)
+	{
+		return ((char *)s + i);
+	}
+	return (NULL);
 }

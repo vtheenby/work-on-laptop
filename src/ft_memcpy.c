@@ -6,7 +6,7 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:35:02 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/29 17:32:36 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/10/31 18:21:22 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	str1 = dst;
 	str2 = src;
 	i = 0;
+	if (dst == NULL && src == NULL)
+	{
+		return (NULL);
+	}
 	while (i < n)
 	{
 		str1[i] = str2[i];

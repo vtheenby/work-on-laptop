@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_strdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:38:21 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/31 20:31:10 by lboertie      ########   odam.nl         */
+/*   Created: 2019/10/31 14:39:50 by lboertie       #+#    #+#                */
+/*   Updated: 2019/10/31 14:53:26 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	size_t				i;
-	unsigned char		*str1;
-	const unsigned char	*str2;
+	char	*str;
+	int		i;
 
 	i = 0;
-	str1 = dst;
-	str2 = src;
-	if (src == NULL && dst == NULL)
-		return (NULL);
-	while (i < len)
+	str = malloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (str == NULL)
 	{
-		while (&dst >= &src && &dst <= &src[len - 1])
-		{
-			str1[len] = str2[len];
-			len--;
-		}
-		else
-		{
-			str1[i] = str2[i];
-			i++;
-		}
-		
+		return (NULL);
 	}
-	dst = str1;
-	return (dst);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

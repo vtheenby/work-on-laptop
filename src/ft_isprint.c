@@ -6,11 +6,11 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:07:17 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/29 16:09:14 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/10/30 19:02:50 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 	{

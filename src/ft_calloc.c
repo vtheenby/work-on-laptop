@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_calloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:38:21 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/31 20:31:10 by lboertie      ########   odam.nl         */
+/*   Created: 2019/10/31 14:18:54 by lboertie       #+#    #+#                */
+/*   Updated: 2019/10/31 14:30:32 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t				i;
-	unsigned char		*str1;
-	const unsigned char	*str2;
+	void	*mem;
+	size_t	total;
 
-	i = 0;
-	str1 = dst;
-	str2 = src;
-	if (src == NULL && dst == NULL)
-		return (NULL);
-	while (i < len)
+	total = count * size;
+	mem = malloc(total);
+	if (mem == NULL)
 	{
-		while (&dst >= &src && &dst <= &src[len - 1])
-		{
-			str1[len] = str2[len];
-			len--;
-		}
-		else
-		{
-			str1[i] = str2[i];
-			i++;
-		}
-		
+		return (NULL);
 	}
-	dst = str1;
-	return (dst);
+	ft_bzero(mem, total);
+	return (mem);
 }
