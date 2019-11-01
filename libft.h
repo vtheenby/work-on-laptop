@@ -6,7 +6,7 @@
 /*   By: lboertie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 13:38:09 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/29 16:56:53 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/11/01 19:10:56 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# define MIN_INT -2147483648
+# define MIN_LONG "-2147483648"
+# define MAX_LONG "2147483647"
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:25:35 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/31 15:41:01 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/11/01 19:12:57 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			sign *= -1;
-		}
 		i++;
 	}
 	while (str[i] <= '9' && str[i] >= '0')

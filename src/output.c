@@ -6,7 +6,7 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 17:39:35 by lboertie       #+#    #+#                */
-/*   Updated: 2019/10/29 18:40:23 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/11/01 19:11:11 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@ void	ft_putchar_fd(char c, int fd)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	if (s)
+		write(fd, s, ft_strlen(s));
 }
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }
 
 void	ft_putnbr_fd(int n, int fd)
@@ -33,7 +37,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		if (n == -2147483648)
+		if (n == MIN_INT)
 		{
 			ft_putchar_fd('2', fd);
 			ft_putnbr_fd(147483648, fd);
