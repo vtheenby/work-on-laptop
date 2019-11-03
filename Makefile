@@ -6,7 +6,7 @@
 #    By: lboertie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 13:33:49 by lboertie       #+#    #+#                 #
-#    Updated: 2019/11/02 22:46:15 by vess          ########   odam.nl          #
+#    Updated: 2019/11/03 18:21:47 by vess          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = ft_strlen.c output.c ft_atoi.c ft_bzero.c ft_isalpha.c ft_memcpy.c \
 	ft_toupper.c ft_tolower.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	ft_memcmp.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
 	ft_strnstr.c ft_strncmp.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c
+	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c
 OBJ = $(SRC:.c=.o)
 
 all: $(LIB)
