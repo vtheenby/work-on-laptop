@@ -6,7 +6,7 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:25:35 by lboertie       #+#    #+#                */
-/*   Updated: 2019/11/05 17:33:51 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/11/06 18:42:17 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int			ft_atoi(const char *str)
 {
 	int					sign;
 	int					i;
-	unsigned long int	total;
-	unsigned long int	last;
+	long int			total;
+	long int			last;
 
 	i = 0;
 	sign = 1;
@@ -42,7 +42,7 @@ int			ft_atoi(const char *str)
 	{
 		last = total;
 		total = total * 10 + str[i] - '0';
-		if (last > total)
+		if (total < last)
 			return (ft_handle_overflow(sign));
 		i++;
 	}

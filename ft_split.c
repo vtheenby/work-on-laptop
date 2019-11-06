@@ -6,7 +6,7 @@
 /*   By: lboertie <lboertie@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/03 21:24:45 by lboertie       #+#    #+#                */
-/*   Updated: 2019/11/05 17:32:59 by lboertie      ########   odam.nl         */
+/*   Updated: 2019/11/06 15:25:17 by lboertie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	**ft_fill_strings(char const *s, char c, char **words)
 		if (s[i] == c)
 		{
 			words[j] = ft_substr(s, k, i - k);
-			if (!words[j] || words[j] == NULL)
+			if (!words[j])
 			{
 				ft_free_str_array(words, j - 1);
 				return (NULL);
@@ -80,7 +80,7 @@ static char	*ft_clean_input(char const *s, char c)
 	i = 0;
 	k = 0;
 	ret = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!ret || ret == NULL)
+	if (!ret)
 		return (NULL);
 	while (s[i])
 	{
@@ -111,14 +111,14 @@ char		**ft_split(char const *s, char c)
 	str = ft_clean_input(str1, c);
 	if (str == NULL)
 		return (NULL);
-	if (!str || str == NULL)
+	free(str1);
+	if (!str)
 		return (NULL);
 	words = malloc(sizeof(char*) * ft_get_wordcount(str, c) + 1);
-	if (!words || words == NULL)
+	if (!words)
 		return (NULL);
 	words = ft_fill_strings(str, c, words);
 	free(str);
-	free(str1);
 	if (!words)
 		return (NULL);
 	return (words);
